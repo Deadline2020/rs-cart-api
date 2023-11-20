@@ -96,7 +96,7 @@ export class CartService {
 
   async removeByUserId(userId: string): Promise<void> {
     const cart = await this.cartRepository.findOne({
-      where: { userId },
+      where: { userId, status: StatusType.OPEN },
     });
 
     await this.cartRepository.remove(cart);
