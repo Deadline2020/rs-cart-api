@@ -5,5 +5,6 @@ import { AppRequest } from '../models';
  * @returns {string}
  */
 export function getUserIdFromRequest(request: AppRequest): string {
-  return request.user && request.user.id;
+  const testUserId = '0352d07a-5c89-45bc-ad75-17157e24604a';
+  return request.user ? request.user.id : testUserId;
 }
